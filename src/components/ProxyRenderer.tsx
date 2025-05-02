@@ -20,6 +20,7 @@ type ContentsProps = {
   currentDocument: IDocument | undefined;
   fileName: string;
   CurrentRenderer: DocRenderer | null | undefined;
+  sandbox?: string;
   state: IMainState;
   t: (
     key:
@@ -42,6 +43,7 @@ const Contents: React.FC<ContentsProps> = ({
   currentDocument,
   fileName,
   CurrentRenderer,
+  sandbox,
   state,
   t,
 }) => {
@@ -52,7 +54,7 @@ const Contents: React.FC<ContentsProps> = ({
       const OverrideComponent = config.loadingRenderer.overrideComponent;
       return (
         <LoadingTimeout>
-          <OverrideComponent document={currentDocument} fileName={fileName} />
+          <OverrideComponent document={currentDocument} fileName={fileName} sandbox={sandbox} />
         </LoadingTimeout>
       );
     }
@@ -97,7 +99,7 @@ const Contents: React.FC<ContentsProps> = ({
   }
 };
 
-export const ProxyRenderer: FC = () => {
+export const ProxyRenderer: FC = (sandbox?: string) => {
   const { state, dispatch, CurrentRenderer } = useDocumentLoader();
   const { documents, documentLoading, currentDocument, config } = state;
   const size = useWindowSize();
@@ -126,6 +128,7 @@ export const ProxyRenderer: FC = () => {
           config,
           currentDocument,
           fileName,
+          sandbox,
           CurrentRenderer,
           t,
         }}
