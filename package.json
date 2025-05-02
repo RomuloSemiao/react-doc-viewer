@@ -2,7 +2,7 @@
   "name": "@romulosemiao/react-doc-viewer",
   "version": "1.17.0",
   "description": "File viewer for React.",
-  "author": "Matthew Mogford / Damian Cyntler",
+  "author": "Matthew Mogford / Damian Cyntler / Rômulo Semião",
   "type": "module",
   "keywords": [
     "reactjs",
