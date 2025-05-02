@@ -53,7 +53,7 @@ const DocViewer = forwardRef<DocViewerRef, DocViewerProps>((props, ref) => {
           style={props.style}
         >
           <HeaderBar />
-          <ProxyRenderer />
+          <ProxyRenderer sandbox={props.config.overrideComponent.sandbox}/>
         </Container>
       </ThemeProvider>
     </DocViewerProvider>
