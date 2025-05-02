@@ -15,6 +15,7 @@ export interface ILoadingRendererConfig {
   overrideComponent?: ComponentType<{
     document: IDocument | undefined;
     fileName: string;
+    sandbox?: string;
   }>;
   showLoadingTimeout?: false | number;
 }
