@@ -24,6 +24,7 @@ export interface INoRendererConfig {
   overrideComponent?: ComponentType<{
     document: IDocument | undefined;
     fileName: string;
+    sandbox?: string;
   }>;
 }
 
